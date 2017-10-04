@@ -11,7 +11,7 @@
 \RequirePackage{amsfonts,amssymb,amsthm,mathtools,mathrsfs}
 \RequirePackage{physics}
 \RequirePackage{wrapfig,graphicx,float}
-\RequirePackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.0cm,includefoot,footskip=0.5cm]{geometry}
+\RequirePackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.0cm,includefoot,footskip=1.0cm]{geometry}
 
 % additional useful commands 
 \newcommand{\const}{\text{const}}
