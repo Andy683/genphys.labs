@@ -1,0 +1,8 @@
+set term png
+set output 'graph.png'
+set grid
+set title 'Resonance curves'
+set xlabel 'v/v0'
+set ylabel 'U/U0'
+set yrange [0:1.2]
+plot 'data' u 1:2 title 'R = 0 Ohm' pt 7 ps 1, 'data' u 3:4 title 'R = 100 Ohm' pt 7 ps 1
