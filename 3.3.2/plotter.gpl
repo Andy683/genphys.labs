@@ -1,0 +1,17 @@
+set term png
+set termopt enhanced 
+
+set grid
+set xrange [0:360]
+set yrange [0:6500]
+set xlabel "Voltage, V^{3/2}"
+set ylabel "Current, µA"
+set key left top
+f(x) = a*x+b
+
+do for [i=3:6] {
+	set output "graph_i1".i.".png"
+	set title "Current–voltage characteristic of a vacuum tube diode, cathode's current = 1.".i."A"
+	fit f(x) "data_i1.".i using (($2)**1.5):1 via a,b
+	plot "data_i1.".i using (($2)**1.5):1 pt 7 ps 1 title "Experimental points", f(x) title "Fitting"
+}
