@@ -1,0 +1,5 @@
+set term png
+set termopt enhanced 
+
+set grid
+set 

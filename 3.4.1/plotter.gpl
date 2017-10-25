@@ -1,0 +1,32 @@
+set term png
+set termopt enhanced 
+set key left top
+
+k = 1.05655
+
+set title 'Calibration curve for electromagnet'
+set xlabel "Current, A"
+set ylabel "Magnetic field, T"
+set xrange [0.2:0.9]
+
+f(x) = a*x+b
+fit f(x) 'magnet_data' using 1:(($2)/7.2) via a,b
+
+set output "calibration_curve.png"
+plot f(x) title 'Calibration curve', 'magnet_data' using 1:(($2)/7.2) pt 7 ps 1 title 'Experimental points'
+
+set title 'Magnetic susceptibility for different materials'
+set ylabel "Force, mN"
+set xlabel "Magnetic field, T^2"
+set xrange [0.2:1.2]
+
+g(x) = q*x+w
+h(x) = e*x+r
+j(x) = t*x+y
+
+fit g(x) 'data' using (k*k*($1)**2):(($2)*9.81) via q,w
+fit h(x) 'data' using (k*k*($3)**2):(($4)*9.81) via e,r
+fit j(x) 'data' using (k*k*($5)**2):(($6)*9.81) via t,y
+
+set output "graph.png"
+plot g(x) title 'Cu', h(x) title 'Al', j(x) title 'graphite', 'data' u (k*k*($1)**2):(($2)*9.81) notitle, 'data' u (k*k*($3)**2):(($4)*9.81) notitle, 'data' u (k*k*($5)**2):(($6)*9.81) notitle
