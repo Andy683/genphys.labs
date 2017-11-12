@@ -1,0 +1,40 @@
+set term png
+set termopt enhanced 
+set key left top
+
+set title 'Galvanometer`s dynamic constant'
+set xrange [3:25]
+set xlabel 'x, cm'
+set ylabel 'I, 10^{-8} A'
+set grid
+
+f(x) = a*x+b
+fit f(x) 'data_dynamic' using 1:2 via a,b
+
+set output "dynamic_constant.png"
+plot f(x) title "Fitting curve", "data_dynamic" using 1:2 pt 7 ps 1 notitle
+
+set title 'On galvanometer`s critical resistance'
+set xrange [0.4:5]
+set yrange [30:45]
+set xlabel '(R_0+R)^2, 10^{-9} Ohm'
+set ylabel '1/theta^2'
+
+g(x) = c*x+d
+fit g(x) 'data_critical' using 1:2 via c,d
+
+set output "critical_resistance.png"
+plot g(x) title "Fitting curve", "data_critical" using 1:2 pt 7 ps 1 notitle
+
+set title 'Ballistic galvanometer'
+set xrange [0.0138:0.0174]
+set yrange [4.9:15]
+set xlabel '(R_0+R)^{-1}, kOhm'
+set ylabel 'l_{max}, cm'
+
+h(x) = q*x+w
+fit h(x) 'data_ballistic' using 1:2 via q,w
+
+set key left bottom
+set output "ballistic.png"
+plot h(x) title "Fitting curve", "data_ballistic" using 1:2 pt 7 ps 1 notitle
