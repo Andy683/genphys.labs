@@ -16,6 +16,5 @@
 % additional useful commands 
 \newcommand{\const}{\text{const}}
 \newcommand{\then}{\quad\Rightarrow\quad}
-\newcommand{\ef}{\mathscr{E}}
 
-\input{units.cls}
+\input{../units.cls}
