@@ -12,14 +12,13 @@
 		set xlabel 'I_m, А'
 		set ylabel 'B, мТ'
 	fit f(x) 'data' using 1:2 every ::2 via a,b
-	plot f(x) title 'Fitting curve', 'data' using 1:2:(0.01):(30) ps 1 pt 1 notitle with xyerrorbars
+	plot f(x) notitle, 'data' using 1:2:(0.01):(30) ps 1 pt 1 notitle with xyerrorbars
 
 # several U = f(I) curves for silver
-	voltage_coeff = 3/100 # 100 scale = 3 microV
 	set output 'silver.png'
 	set title 'ЭДС Холла серебра'
 		set xrange [0:1200]
-		set yrange [0:24]
+		set yrange [0:24*3]
 		set xlabel 'B, мТ'
 		set ylabel 'U_H, {/Symbol m}В'
 	
@@ -34,8 +33,31 @@
 			c = 6
 		}
 		fit f(x) 'data' every :::::c using 2:col via a,b
-		set key at 2.5, col + 15
-		plot 'data' every :::::c using 2:col pt col notitle, f(x) lt col title sprintf("I = %1.2f",(col-2)*0.2)
+		set key at 2.5, 3*col + 15*3
+		plot 'data' every :::::c using 2:col pt col notitle, f(x) lt col title sprintf("I = %1.2f A",(col-2)*0.2)
 	}
 	set nomultiplot
 
+# k = f(I)
+	set output 'hall_constant.png'
+	set title 'К измерению постоянной Холла'
+		set xrange [0.1:1.5]
+		set yrange [0.01:0.09]
+		set xlabel 'I_m, А'
+		set ylabel 'k, {/Symbol m}В/(А Т)'
+
+	a = 0; b = 0;
+	fit f(x) 'data' using 1:10 every ::1 via a,b
+	plot f(x) notitle, 'data' using 1:10 notitle
+
+# zinc
+	set output 'zinc.png'
+	set title 'ЭДС Холла цинка'
+		set xrange [0:1200]
+		set yrange [-130:-20]
+		set xlabel 'B, мТ'
+		set ylabel 'U_H, {/Symbol m}В'
+	
+	a = 0; b = 0;
+	fit f(x) 'data' using 2:9 via a,b
+	plot 'data' using 2:9 pt col notitle, f(x) lt col notitle
