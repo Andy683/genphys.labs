@@ -1,0 +1,41 @@
+# general options
+	set term png; set termopt enhanced 
+	set term png font "Times-Roman,12"
+	set key left top; set grid
+	f(x) = a*x+b
+
+# electromagnet calibration curve
+	set output 'electromagnet.png'
+	set title 'Калибровка электромагнита'
+		set xrange [0.1:1.5]
+		set yrange [0:1200]
+		set xlabel 'I_m, А'
+		set ylabel 'B, мТ'
+	fit f(x) 'data' using 1:2 every ::2 via a,b
+	plot f(x) title 'Fitting curve', 'data' using 1:2:(0.01):(30) ps 1 pt 1 notitle with xyerrorbars
+
+# several U = f(I) curves for silver
+	voltage_coeff = 3/100 # 100 scale = 3 microV
+	set output 'silver.png'
+	set title 'ЭДС Холла серебра'
+		set xrange [0:1200]
+		set yrange [0:24]
+		set xlabel 'B, мТ'
+		set ylabel 'U_H, {/Symbol m}В'
+	
+	set multiplot
+	#set nokey
+	do for [col = 3:8] {
+		a = 0; b = 0;
+		if (col > 5){
+			c = 7-(col-5)-1
+		}
+		else{
+			c = 6
+		}
+		fit f(x) 'data' every :::::c using 2:col via a,b
+		set key at 2.5, col + 15
+		plot 'data' every :::::c using 2:col pt col notitle, f(x) lt col title sprintf("I = %1.2f",(col-2)*0.2)
+	}
+	set nomultiplot
+

@@ -16,5 +16,6 @@
 % additional useful commands 
 \newcommand{\const}{\text{const}}
 \newcommand{\then}{\quad\Rightarrow\quad}
+\newcommand{\avg}[1]{\left< #1 \right>}
 
 \input{../units.cls}
