@@ -8,7 +8,7 @@
 - [x]  [3.4.1](https://github.com/pysmirnov/genphys.labs/blob/master/3.4.1/3.4.1.pdf) &mdash;  Диа- и парамагнетики
 - [x]  [3.2.6](https://github.com/pysmirnov/genphys.labs/blob/master/3.2.6/3.2.6.pdf) &mdash;  Исследование гальванометра
 - [x]  [3.3.5](https://github.com/pysmirnov/genphys.labs/blob/master/3.3.5/3.3.5.pdf) &mdash;  Эффект Холла в металлах
-- [ ]  3.122 &mdash;  Резонанс напряжений в последовательном контуре
+- [x]  [3.122](https://github.com/pysmirnov/genphys.labs/blob/master/3.122/3.122.pdf) &mdash;  Резонанс напряжений в последовательном контуре
 
 ---
 
