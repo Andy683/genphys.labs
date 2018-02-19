@@ -5,7 +5,13 @@
 \rhead{П.\,Ю. Смирнов, 687 гр.}
 \lhead{Лабораторная работа № 4.4.1, МФТИ, весна 2018}
 
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+
 \begin{document}
+
+%	thnx Плюсинину Павлу за данные
+%	и спасибо гониометру за 1,5 пары настройки
+%	и, соотв., негодные результаты своих измерений
 
 {\Large 4.4.1 -- Амплитудная дифракционная решётка.}
 
@@ -77,6 +83,35 @@ $\text{цвет}$ & $\varphi$ & $\sin (\varphi - \varphi_0)$ & $\lambda, \sn \m$
 \end{gather*}
 
 Заметим, что на установке $N = 500 \ \text{штрихов} / \sm \m \then d = 2000 \ \sn \m$, что мы почти и получили.
+
+Теперь исследуем угловую дисперсию по линия жёлтого дублета в спектрах разного порядка $m$:
+
+\begin{equation}
+	D(\lambda) = \dv{\varphi}{\lambda} = \frac{m}{\sqrt{d^2 - m^2 \lambda^2}}.
+\end{equation}
+
+\bigskip
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$m$ & $\text{1-ая линия}$ & $\text{2-ая линия}$ & $\Delta \varphi, \text{сек}$ & $D_{\text{exp}}$ & $D_{\text{theor}}$ \\
+\hline
+1	&	$16^{\circ}38^{\prime}29^{\prime \prime}$	&	$16^{\circ}42^{\prime}36^{\prime \prime}$	&	$247$	&	$11.76$	&	$16.96$	\\ \hline
+-1	&	$6^{\circ}58^{\prime}00^{\prime \prime}$	&	$6^{\circ}53^{\prime}43^{\prime \prime}$	&	$-257$	&	-$12.23$	&	$-16.96$	\\ \hline
+-2	&	$26^{\circ}31^{\prime}01^{\prime \prime}$	&	$26^{\circ}44^{\prime}45^{\prime \prime}$	&	$824$	&	$-39.23$	&	$-44.11$	\\ \hline
+\end{tabular}
+\bigskip
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{fig2.png}
+	\caption{Угловая дисперсия.}
+	\label{fig:results2}
+\end{figure}
+
+Оценим также разрешающую способность $R = \lambda / \delta \lambda$. Ширина одного желтого дуплета есть $\delta \varphi = 32^{\prime \prime}$, тогда $\delta \lambda = \delta \varphi / D \simeq 1.9 \angstrom \then R = 1.9 \cdot 10^3$. Тогда число одновременно работающих штрихов в критерии Релея $N = R/m = 1.0 \cdot 10^3$. 
+
+\paragraph{Вывод.}
+В данной работе мы научились проводить простейший спектральный анализ, а также оценили по результатам эксперимента параметры установки.
 
 \end{document}
 
