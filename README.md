@@ -4,6 +4,8 @@
 ## весна 2018:
 - [x]  [4.4.1](https://github.com/pysmirnov/genphys.labs/blob/master/4.4.1/4.4.1.pdf) &mdash;  Амплитудная дифракционная решётка
 - [x]  [4.7.3](https://github.com/pysmirnov/genphys.labs/blob/master/4.7.3/4.7.3.pdf) &mdash;  Поляризация
+- [x]  [4.6.1](https://github.com/pysmirnov/genphys.labs/blob/master/4.6.1/4.6.1.pdf) &mdash;  Интерференция электромагнитных волн миллиметрового диапазона
+- [x]  [4.7.1](https://github.com/pysmirnov/genphys.labs/blob/master/4.7.1/4.7.1.pdf) &mdash;  Двойное лучепреломление
 
 ---
 
