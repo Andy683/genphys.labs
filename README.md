@@ -6,8 +6,7 @@
 - [x]  [4.7.3](https://github.com/pysmirnov/genphys.labs/blob/master/4.7.3/4.7.3.pdf) &mdash;  Поляризация
 - [x]  [4.6.1](https://github.com/pysmirnov/genphys.labs/blob/master/4.6.1/4.6.1.pdf) &mdash;  Интерференция электромагнитных волн миллиметрового диапазона
 - [x]  [4.7.1](https://github.com/pysmirnov/genphys.labs/blob/master/4.7.1/4.7.1.pdf) &mdash;  Двойное лучепреломление
-
----
+- [x]  [4.2.1](https://github.com/pysmirnov/genphys.labs/blob/master/4.2.1/4.2.1.pdf) &mdash;  Кольца Ньютона
 
 ## осень 2017:
 - [x]  [3.2.5](https://github.com/pysmirnov/genphys.labs/blob/master/3.2.5/3.2.5.pdf) &mdash;  Вынужденные колебания в электрическом контуре  
